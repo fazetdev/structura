@@ -2,26 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  --paper:#f5f2eb;
+  --cream:#ede9de;
+  --ink:#0f0e0c;
+  --accent:#c8622a;
+  --muted:#7a7367;
+  --border:#d8d2c4;
+  --white:#faf9f6;
+
+  --font-syne:'Syne',sans-serif;
+  --font-inter:'Inter',sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-inter);
+  min-height:100vh;
+  line-height:1.7;
+}
+
+h1,h2,h3,h4{
+  font-family:var(--font-syne);
+  color:var(--ink);
+  line-height:1.1;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding-left:1.5rem;
+  padding-right:1.5rem;
+}
+
+.section{
+  padding-top:5rem;
+  padding-bottom:5rem;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:24px;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  background:var(--accent);
+  color:white;
+  padding:1rem 1.4rem;
+  border-radius:14px;
+  font-size:.95rem;
+  font-weight:500;
+  transition:.2s;
+}
+
+.btn:hover{
+  opacity:.92;
+}
+
+.btn-secondary{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--border);
+}
+
+.small-text{
+  font-size:.95rem;
+}
+
+.large-text{
+  font-size:1.1rem;
+}
+
+.hero-title{
+  font-size:clamp(2.8rem,8vw,5.5rem);
+}
+
+.hero-sub{
+  font-size:clamp(1rem,2vw,1.25rem);
+  color:var(--muted);
+}
+
+.footer-text{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:2.8rem;
+}
+
+.section{
+padding-top:3rem;
+padding-bottom:3rem;
+}
+
 }
