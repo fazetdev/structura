@@ -1,27 +1,54 @@
 export default function Hero() {
   return (
-    <section className="container pt-2 pb-12">
+    <section className="container pt-3 pb-12">
 
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center">
 
-        <h1 className="text-[3rem] leading-[1] font-extrabold tracking-[-0.04em] mb-6 md:text-[5rem]">
-          Turn messy study material into a clear structure
+        {/* Eyebrow */}
+        <div className="text-sm uppercase tracking-[0.18em] text-[var(--muted)] mb-5">
+          Academic Structure Support
+        </div>
+
+        {/* Main headline */}
+        <h1
+          className="
+            text-[3rem]
+            md:text-[5.4rem]
+            leading-[0.95]
+            tracking-[-0.05em]
+            mb-6
+          "
+          style={{ fontFamily: "Instrument Serif" }}
+        >
+          Turn messy study material into structured clarity
         </h1>
 
-        <p className="text-[1.2rem] text-[var(--muted)] mb-6">
-          Send academic material in any form. We turn it into a structured framework you can write from.
+        {/* Supporting text */}
+        <p className="text-[1.15rem] md:text-[1.35rem] text-[var(--muted)] leading-relaxed max-w-2xl mx-auto mb-7">
+          Send academic material in any form. We turn incomplete, mixed, or messy inputs into a structured framework you can actually write from.
         </p>
 
-        <a
-          href={`https://wa.me/2349036961611?text=${encodeURIComponent(
-            "Hi, I need help organizing my academic material."
-          )}`}
-          className="inline-flex px-6 py-3 bg-[var(--accent)] text-white mb-6"
-        >
-          Start on WhatsApp
-        </a>
+        {/* CTA */}
+        <div className="flex justify-center mb-5">
+          <a
+            href="https://wa.me/2349036961611?text=Hi%2C%20I%20need%20help%20organizing%20my%20academic%20material."
+            className="
+              inline-flex
+              items-center
+              justify-center
+              bg-[#25d366]
+              text-white
+              px-7
+              py-3.5
+              text-base
+            "
+          >
+            Start on WhatsApp
+          </a>
+        </div>
 
-        <p className="text-[1rem] text-[var(--muted)]">
+        {/* Trust text */}
+        <p className="text-[0.98rem] text-[var(--muted)]">
           Structured guidance only — not ghostwriting
         </p>
 

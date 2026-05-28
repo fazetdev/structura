@@ -6,38 +6,45 @@ import { useState } from "react"
 const items = [
   {
     title: "Voice notes",
-    desc: "Recorded explanations, lectures, or ideas. Converted into structured academic points.",
+    desc: "Recorded explanations, lectures, or ideas converted into structured academic points and flow.",
   },
   {
     title: "PDF files",
-    desc: "Lecture slides, textbooks, or briefs. Key ideas extracted and structured clearly.",
+    desc: "Lecture slides, textbooks, briefs, or course materials reorganized into a clear framework.",
   },
   {
     title: "Lecture notes",
-    desc: "Handwritten or digital notes reorganized into academic structure.",
+    desc: "Messy handwritten or digital notes cleaned into readable academic structure.",
   },
   {
     title: "Screenshots",
-    desc: "Images from WhatsApp, LMS, or notes interpreted into structured content.",
+    desc: "Images from WhatsApp, LMS platforms, websites, or documents interpreted into organized content.",
   },
   {
-    title: "Rough ideas",
-    desc: "Unclear or incomplete thoughts refined into a structured writing framework.",
+    title: "Research material",
+    desc: "Articles, links, excerpts, journals, or references organized into usable structure.",
+  },
+  {
+    title: "Mixed materials",
+    desc: "Different file types sent together — including unclear or incomplete instructions.",
   },
 ]
 
 const steps = [
   {
-    title: "Send anything",
-    desc: "No format needed. Just send your material as it is.",
+    number: "01",
+    title: "Send your material",
+    desc: "Send voice notes, PDFs, screenshots, lecture notes, links, or mixed materials exactly as they are.",
   },
   {
-    title: "We structure it",
-    desc: "We convert messy input into a clear academic framework.",
+    number: "02",
+    title: "We organize everything",
+    desc: "Your material is cleaned, structured, and arranged into a readable academic framework.",
   },
   {
-    title: "You write easily",
-    desc: "You complete your work using a structured guide.",
+    number: "03",
+    title: "Write with clarity",
+    desc: "Use the structure as your guide for writing the final work yourself.",
   },
 ]
 
@@ -51,20 +58,24 @@ function AccordionItem({ item }: any) {
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center p-5 text-left"
       >
-        <span className="text-[1.05rem] md:text-lg font-medium text-[var(--ink)]">
+
+        <span className="text-[1.08rem] md:text-[1.15rem] font-medium text-[var(--ink)]">
           {item.title}
         </span>
 
-        <span className="text-[var(--muted)] text-xl">
+        <span className="text-[var(--muted)] text-2xl">
           {open ? "−" : "+"}
         </span>
+
       </button>
 
       {open && (
         <div className="px-5 pb-5">
-          <p className="text-[1rem] md:text-lg text-[var(--muted)] leading-relaxed">
+
+          <p className="text-[1rem] text-[var(--muted)] leading-relaxed">
             {item.desc}
           </p>
+
         </div>
       )}
 
@@ -73,80 +84,154 @@ function AccordionItem({ item }: any) {
 }
 
 export default function Home() {
+
+  const [processOpen, setProcessOpen] = useState(false)
+
   return (
     <main>
 
-      {/* HERO */}
       <Hero />
 
-      {/* WHAT YOU CAN SEND */}
-      <section className="container pt-10 pb-12">
-
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-          What you can send
-        </h2>
-
-        <p className="text-[1.1rem] md:text-xl text-[var(--muted)] mb-7 leading-relaxed">
-          Any academic material in any form. We work with messy, incomplete, or mixed inputs and turn them into a structured writing framework.
-        </p>
+      {/* INPUTS */}
+      <section className="container py-10 border-t border-[var(--border)]">
 
         <div className="space-y-3">
+
           {items.map((item) => (
             <AccordionItem key={item.title} item={item} />
           ))}
+
         </div>
 
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="container py-12">
+      {/* PROCESS */}
+      <section className="container py-10 border-t border-[var(--border)]">
 
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-          How it works
-        </h2>
+        <div className="border border-[var(--border)] bg-[var(--white)]">
 
-        <div className="space-y-4">
+          <button
+            onClick={() => setProcessOpen(!processOpen)}
+            className="w-full p-5 flex items-center justify-between text-left"
+          >
 
-          {steps.map((step, i) => (
-            <div
-              key={step.title}
-              className="border border-[var(--border)] bg-[var(--white)] p-5"
-            >
-              <div className="text-sm text-[var(--muted)] mb-1">
-                Step {i + 1}
+            <div>
+
+              <div className="text-sm uppercase tracking-[0.18em] text-[var(--muted)] mb-2">
+                Process
               </div>
 
-              <div className="text-[1.05rem] md:text-lg font-medium mb-1">
-                {step.title}
-              </div>
+              <h2
+                className="text-[1.6rem] md:text-[2rem] leading-[1]"
+                style={{ fontFamily: "Instrument Serif" }}
+              >
+                How it works
+              </h2>
 
-              <div className="text-[1rem] md:text-lg text-[var(--muted)] leading-relaxed">
-                {step.desc}
-              </div>
             </div>
-          ))}
+
+            <span className="text-3xl text-[var(--muted)]">
+              {processOpen ? "−" : "+"}
+            </span>
+
+          </button>
+
+          {processOpen && (
+
+            <div className="px-5 pb-5 border-t border-[var(--border)]">
+
+              <div className="space-y-5 py-5">
+
+                {steps.map((step) => (
+
+                  <div
+                    key={step.number}
+                    className="border border-[var(--border)] p-5"
+                  >
+
+                    <div className="flex items-center gap-4 mb-3">
+
+                      <div
+                        className="text-[1.5rem] text-[var(--accent)]"
+                        style={{ fontFamily: "Instrument Serif" }}
+                      >
+                        {step.number}
+                      </div>
+
+                      <h3 className="text-[1.05rem] font-medium">
+                        {step.title}
+                      </h3>
+
+                    </div>
+
+                    <p className="text-[1rem] text-[var(--muted)] leading-relaxed">
+                      {step.desc}
+                    </p>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+              <a
+                href="https://wa.me/2349036961611?text=Hi%2C%20I%20need%20help%20organizing%20my%20academic%20material."
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  bg-[#25d366]
+                  text-white
+                  px-6
+                  py-4
+                  text-sm
+                  mt-2
+                "
+              >
+                Start on WhatsApp
+              </a>
+
+            </div>
+
+          )}
 
         </div>
 
       </section>
 
       {/* CTA */}
-      <section className="container py-14 text-center">
+      <section className="container py-14 border-t border-[var(--border)]">
 
-        <h2 className="text-2xl md:text-3xl font-semibold mb-3">
-          Need structure help now?
-        </h2>
+        <div className="bg-[var(--white)] border border-[var(--border)] p-8 text-center">
 
-        <p className="text-[1.1rem] md:text-xl text-[var(--muted)] mb-6">
-          Send your material and get a clear academic framework you can write from.
-        </p>
+          <h2
+            className="text-[2.1rem] md:text-[3.4rem] leading-[0.95] tracking-[-0.05em] mb-5"
+            style={{ fontFamily: "Instrument Serif" }}
+          >
+            Need structure help now?
+          </h2>
 
-        <a
-          href="https://wa.me/2349036961611?text=Hi%2C%20I%20need%20help%20organizing%20my%20academic%20material."
-          className="inline-flex px-6 py-3 bg-[var(--accent)] text-white"
-        >
-          Start on WhatsApp
-        </a>
+          <p className="text-[1.08rem] text-[var(--muted)] leading-relaxed mb-7 max-w-xl mx-auto">
+            One message is enough. Send your material exactly as it is.
+          </p>
+
+          <a
+            href="https://wa.me/2349036961611?text=Hi%2C%20I%20need%20help%20organizing%20my%20academic%20material."
+            className="
+              inline-flex
+              items-center
+              justify-center
+              bg-[#25d366]
+              text-white
+              px-8
+              py-4
+              text-base
+            "
+          >
+            Start on WhatsApp
+          </a>
+
+        </div>
 
       </section>
 
