@@ -1,54 +1,82 @@
 import Link from "next/link"
-import { config, waLink } from "@/lib/config"
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#1f1f1f] bg-[#0f0f10] mt-20">
-      <div className="max-w-5xl mx-auto px-6 py-14">
+    <footer className="bg-[var(--ink)] text-[var(--paper)] mt-20">
 
-        <div className="grid md:grid-cols-2 gap-10">
+      <div className="container py-12">
 
-          <div>
-            <h3 className="text-lg font-semibold">{config.brand}</h3>
-            <p className="mt-3 text-[#b5b5b5] text-sm max-w-md">
-              Academic structure support for students. You provide material, we convert it into structured clarity.
-            </p>
+        {/* BRAND */}
+        <div className="mb-10">
 
-            <a
-              href={waLink()}
-              className="inline-block mt-5 text-sm text-[#25d366]"
-            >
-              Send on WhatsApp →
-            </a>
+          <div
+            className="text-[2rem] mb-3"
+            style={{ fontFamily: "Instrument Serif" }}
+          >
+            Struc<span className="text-[var(--accent)]">tura</span>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 text-sm text-[#b5b5b5]">
-            <div>
-              <div className="text-white mb-3">Service</div>
-              {config.nav.map((i) => (
-                <Link key={i.href} href={i.href} className="block mb-2 hover:text-white">
-                  {i.label}
-                </Link>
-              ))}
-            </div>
-
-            <div>
-              <div className="text-white mb-3">Legal</div>
-              {config.footer.map((i) => (
-                <Link key={i.href} href={i.href} className="block mb-2 hover:text-white">
-                  {i.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <p className="text-[1.05rem] text-white/60 max-w-md leading-relaxed">
+            Academic structure support for students. We turn messy inputs into clear writing frameworks.
+          </p>
 
         </div>
 
-        <div className="mt-10 text-xs text-[#666]">
-          © {new Date().getFullYear()} {config.brand}
+        {/* CORE ACTION */}
+        <div className="flex flex-col gap-6">
+
+          <a
+            href="https://wa.me/2349036961611?text=Hi%2C%20I%20need%20help%20organizing%20my%20academic%20material."
+            className="
+              inline-flex
+              items-center
+              justify-center
+              bg-[#25d366]
+              text-white
+              px-6
+              py-3
+              text-sm
+              w-fit
+            "
+          >
+            Start on WhatsApp
+          </a>
+
+          {/* ESSENTIAL LINKS ONLY */}
+          <div className="flex flex-wrap gap-6 text-[0.95rem]">
+
+            <Link
+              href="/faq"
+              className="text-white/60 hover:text-white transition"
+            >
+              FAQ
+            </Link>
+
+            <Link
+              href="/policy"
+              className="text-white/60 hover:text-white transition"
+            >
+              Policy
+            </Link>
+
+            <Link
+              href="/disclaimer"
+              className="text-white/60 hover:text-white transition"
+            >
+              Disclaimer
+            </Link>
+
+          </div>
+
+          {/* COPYRIGHT */}
+          <div className="text-[0.85rem] text-white/40 pt-2 border-t border-white/10">
+            © {new Date().getFullYear()} Structura. All rights reserved.
+          </div>
+
         </div>
 
       </div>
+
     </footer>
   )
 }
