@@ -4,7 +4,7 @@ const tiers = [
   {
     level: "Tier 1",
     name: "Single Source",
-    price: "$4",
+    price: "$5",
     tag: null,
     desc: "You have one item. One clear input, one structured outline back.",
     examples: [
@@ -13,12 +13,12 @@ const tiers = [
       "One voice note",
       "One set of screenshots",
     ],
-    waMessage: "Hi, I want to request a preview first. I have a single source (Tier 1 — $4):",
+    waMessage: "Hi, I want to request a preview first. I have a single source (Tier 1 — $5):",
   },
   {
     level: "Tier 2",
     name: "Small Combo",
-    price: "$7",
+    price: "$9",
     tag: "Most common",
     desc: "You have two or three items from different sources.",
     examples: [
@@ -27,12 +27,12 @@ const tiers = [
       "Lecture notes + PDF",
       "Any 2–3 item combination",
     ],
-    waMessage: "Hi, I want to request a preview first. I have a small combo (Tier 2 — $7):",
+    waMessage: "Hi, I want to request a preview first. I have a small combo (Tier 2 — $9):",
   },
   {
     level: "Tier 3",
     name: "Full Set",
-    price: "$10",
+    price: "$14",
     tag: null,
     desc: "Brief, slides, notes, screenshots — all pulled into one structure.",
     examples: [
@@ -41,12 +41,12 @@ const tiers = [
       "3–5 items across different sources",
       "One assignment, multiple formats",
     ],
-    waMessage: "Hi, I want to request a preview first. I have a full set (Tier 3 — $10):",
+    waMessage: "Hi, I want to request a preview first. I have a full set (Tier 3 — $14):",
   },
   {
     level: "Tier 4",
     name: "Complex Case",
-    price: "$20",
+    price: "$25",
     tag: "For serious cases",
     desc: "A lot of material, no clear direction. You don't know where the assignment is going.",
     examples: [
@@ -55,7 +55,7 @@ const tiers = [
       "Multiple documents across topics",
       "You don't know where to start",
     ],
-    waMessage: "Hi, I want to request a preview first. I have a complex case (Tier 4 — $20):",
+    waMessage: "Hi, I want to request a preview first. I have a complex case (Tier 4 — $25):",
   },
 ]
 
