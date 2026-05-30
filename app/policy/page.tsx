@@ -1,62 +1,66 @@
+"use client"
+
+import { useState } from "react"
+
+const items = [
+  {
+    title: "Educational support only",
+    desc: "Structura provides organization, structure, and clarity support for academic material. Nothing more.",
+  },
+  {
+    title: "No ghostwriting",
+    desc: "Structura does not impersonate students or complete final academic submissions on behalf of students.",
+  },
+  {
+    title: "Responsible usage",
+    desc: "Students are expected to use the structure provided as guidance for their own writing process.",
+  },
+]
+
+function Item({ title, desc }: { title: string; desc: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="border border-[#ddd9d0] bg-white">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center px-6 py-5 text-left"
+      >
+        <span className="text-lg font-semibold text-[#141210]">{title}</span>
+        <span className="text-2xl text-[#7a7469]">{open ? "−" : "+"}</span>
+      </button>
+      {open && (
+        <div className="px-6 pb-6">
+          <p className="text-base text-[#7a7469] leading-relaxed">{desc}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function PolicyPage() {
   return (
-    <main className="container py-12">
-
-      <div className="max-w-3xl mx-auto">
-
-        <div className="text-sm uppercase tracking-[0.18em] text-[var(--muted)] mb-3">
-          Policy
+    <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-24">
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 border border-[#22c55e]/30 px-3 py-1.5 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+            <span className="text-sm font-semibold tracking-widest uppercase text-[#22c55e]">
+              Policy
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#141210] mb-4">
+            Academic support policy
+          </h1>
+          <p className="text-lg text-[#7a7469]">
+            How Structura operates and what we stand for.
+          </p>
         </div>
-
-        <h1
-          className="text-[2.8rem] md:text-[4.5rem] leading-[0.95] tracking-[-0.05em] mb-6"
-          style={{ fontFamily: "Instrument Serif" }}
-        >
-          Academic support policy
-        </h1>
-
-        <div className="space-y-8 text-[1.08rem] md:text-[1.15rem] leading-relaxed text-[var(--muted)]">
-
-          <div className="border border-[var(--border)] bg-[var(--white)] p-6">
-
-            <h2 className="text-[1.3rem] text-[var(--ink)] mb-3 font-medium">
-              Educational support only
-            </h2>
-
-            <p>
-              Structura provides organization, structure, and clarity support for academic material.
-            </p>
-
-          </div>
-
-          <div className="border border-[var(--border)] bg-[var(--white)] p-6">
-
-            <h2 className="text-[1.3rem] text-[var(--ink)] mb-3 font-medium">
-              No ghostwriting
-            </h2>
-
-            <p>
-              Structura does not impersonate students or complete final academic submissions on behalf of students.
-            </p>
-
-          </div>
-
-          <div className="border border-[var(--border)] bg-[var(--white)] p-6">
-
-            <h2 className="text-[1.3rem] text-[var(--ink)] mb-3 font-medium">
-              Responsible usage
-            </h2>
-
-            <p>
-              Students are expected to use the structure provided as guidance for their own writing process.
-            </p>
-
-          </div>
-
+        <div className="space-y-3">
+          {items.map((item) => (
+            <Item key={item.title} title={item.title} desc={item.desc} />
+          ))}
         </div>
-
       </div>
-
     </main>
   )
 }

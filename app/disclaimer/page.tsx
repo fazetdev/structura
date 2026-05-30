@@ -1,67 +1,66 @@
+"use client"
+
+import { useState } from "react"
+
+const items = [
+  {
+    title: "Service purpose",
+    desc: "Structura provides academic organization and structure support only. It is designed to help students transform unstructured input into a clear framework for their own writing.",
+  },
+  {
+    title: "No academic submission guarantee",
+    desc: "The service does not produce final academic submissions and does not guarantee grades, outcomes, or approval from any institution.",
+  },
+  {
+    title: "User responsibility",
+    desc: "Users remain fully responsible for writing, editing, and submitting their own academic work based on the structure provided.",
+  },
+]
+
+function Item({ title, desc }: { title: string; desc: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="border border-[#ddd9d0] bg-white">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center px-6 py-5 text-left"
+      >
+        <span className="text-lg font-semibold text-[#141210]">{title}</span>
+        <span className="text-2xl text-[#7a7469]">{open ? "−" : "+"}</span>
+      </button>
+      {open && (
+        <div className="px-6 pb-6">
+          <p className="text-base text-[#7a7469] leading-relaxed">{desc}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function DisclaimerPage() {
   return (
-    <main className="container py-12">
-
-      <div className="max-w-3xl mx-auto">
-
-        {/* LABEL */}
-        <div className="text-sm uppercase tracking-[0.18em] text-[var(--muted)] mb-3">
-          Disclaimer
+    <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-24">
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 border border-[#22c55e]/30 px-3 py-1.5 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+            <span className="text-sm font-semibold tracking-widest uppercase text-[#22c55e]">
+              Disclaimer
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#141210] mb-4">
+            Important notice
+          </h1>
+          <p className="text-lg text-[#7a7469]">
+            What Structura is — and what it is not.
+          </p>
         </div>
-
-        {/* TITLE */}
-        <h1
-          className="text-[2.8rem] md:text-[4.5rem] leading-[0.95] tracking-[-0.05em] mb-6"
-          style={{ fontFamily: "Instrument Serif" }}
-        >
-          Important notice
-        </h1>
-
-        {/* CONTENT */}
-        <div className="space-y-6 text-[1.08rem] md:text-[1.15rem] leading-relaxed text-[var(--muted)]">
-
-          <div className="border border-[var(--border)] bg-[var(--white)] p-6">
-
-            <h2 className="text-[1.2rem] text-[var(--ink)] mb-3 font-medium">
-              Service purpose
-            </h2>
-
-            <p>
-              Structura provides academic organization and structure support only. It is designed to help students
-              transform unstructured input into a clear framework for their own writing.
-            </p>
-
-          </div>
-
-          <div className="border border-[var(--border)] bg-[var(--white)] p-6">
-
-            <h2 className="text-[1.2rem] text-[var(--ink)] mb-3 font-medium">
-              No academic submission guarantee
-            </h2>
-
-            <p>
-              The service does not produce final academic submissions and does not guarantee grades, outcomes, or approval
-              from any institution.
-            </p>
-
-          </div>
-
-          <div className="border border-[var(--border)] bg-[var(--white)] p-6">
-
-            <h2 className="text-[1.2rem] text-[var(--ink)] mb-3 font-medium">
-              User responsibility
-            </h2>
-
-            <p>
-              Users remain fully responsible for writing, editing, and submitting their own academic work based on the structure provided.
-            </p>
-
-          </div>
-
+        <div className="space-y-3">
+          {items.map((item) => (
+            <Item key={item.title} title={item.title} desc={item.desc} />
+          ))}
         </div>
-
       </div>
-
     </main>
   )
 }
