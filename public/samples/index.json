@@ -1,0 +1,33 @@
+[
+  {
+    "id": "soc201",
+    "title": "SOC201 Essay Structure",
+    "description": "Critical essay on motivation theories (Maslow vs Herzberg)",
+    "files": {
+      "notes": "/samples/soc201/notes.jpg",
+      "voice": "/samples/soc201/voice.mp3",
+      "output": "/samples/soc201/output.docx"
+    }
+  },
+  {
+    "id": "bus203",
+    "title": "BUS203 Operations Report",
+    "description": "E-commerce logistics and KPI diagnostic analysis",
+    "files": {
+      "brief": "/samples/bus203/brief.docx",
+      "notes": "/samples/bus203/notes.jpg",
+      "voice": "/samples/bus203/voice.mp3",
+      "output": "/samples/bus203/output.docx"
+    }
+  },
+  {
+    "id": "bm502",
+    "title": "BM502 Study Structure",
+    "description": "Business management structured academic output sample",
+    "files": {
+      "notes": "/samples/bm502/notes.jpg",
+      "voice": "/samples/bm502/voice.mp3",
+      "output": "/samples/bm502/output.docx"
+    }
+  }
+]

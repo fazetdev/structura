@@ -11,7 +11,7 @@ const items = [
   },
   {
     title: "Assignment briefs",
-    desc: "Your question sheet, task instructions, or rubric. We turn it into a clear structure you can follow.",
+    desc: "Your academic task sheet, instructions, or rubric. We turn it into a clear structure you can follow.",
   },
   {
     title: "Lecture notes",
@@ -36,6 +36,14 @@ const items = [
   {
     title: "Research material",
     desc: "Articles, excerpts, journals, or references organized into usable structure (optional for advanced work).",
+  },
+  {
+    title: "Presentation slides",
+    desc: "Slides or presentation outlines structured into clear speaking or writing flow.",
+  },
+  {
+    title: "Project materials",
+    desc: "Multi-part academic projects broken into structured sections and planning flow.",
   },
 ]
 
@@ -75,6 +83,11 @@ export default function Home() {
 
       {/* INPUTS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
+
+        <p className="text-sm text-[#7a7469] mb-4">
+          Any form of academic material can be turned into a structured writing framework.
+        </p>
+
         <div className="space-y-3">
           {items.map((item) => (
             <AccordionItem key={item.title} item={item} />
@@ -82,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS (LINK ONLY) */}
+      {/* PROCESS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
 
         <div className="border border-[#ddd9d0] bg-white p-6">

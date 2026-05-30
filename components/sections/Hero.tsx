@@ -20,12 +20,12 @@ export default function Hero() {
           "
           style={{ fontFamily: "Instrument Serif" }}
         >
-          Turn messy study material into structured clarity
+          Turn messy academic material into structured clarity
         </h1>
 
         {/* Supporting text */}
         <p className="text-[1.15rem] md:text-[1.35rem] text-[var(--muted)] leading-relaxed max-w-2xl mx-auto mb-7">
-          Send academic material in any form. We turn incomplete, mixed, or messy inputs into a structured framework you can actually write from.
+          Send assignments, reports, presentations, lecture notes, or research material. We convert incomplete or messy inputs into a structured writing framework you can actually develop into final work.
         </p>
 
         {/* CTA */}
@@ -48,8 +48,13 @@ export default function Hero() {
         </div>
 
         {/* Trust text */}
-        <p className="text-[0.98rem] text-[var(--muted)]">
-          Structured guidance only — not ghostwriting
+        <p className="text-[0.98rem] text-[var(--muted)] mb-2">
+          Structured academic guidance only — not ghostwriting or submission writing
+        </p>
+
+        {/* Scope clarity */}
+        <p className="text-sm text-[var(--muted)]">
+          Works across assignments, reports, presentations, and project work
         </p>
 
       </div>

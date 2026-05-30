@@ -1,78 +1,129 @@
-import { config } from "@/lib/config"
+"use client"
+
+import { useEffect, useState } from "react"
+
+type Sample = {
+  id: string
+  title: string
+  description: string
+  files: Record<string, string>
+}
 
 export default function SamplesPage() {
+  const [samples, setSamples] = useState<Sample[]>([])
+
+  useEffect(() => {
+    fetch("/samples/index.json")
+      .then((res) => res.json())
+      .then((data) => setSamples(data))
+  }, [])
+
   return (
-    <div className="container mt-20">
+    <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-20">
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl">
-          Sample Structure Outputs
+      {/* Header */}
+      <div className="max-w-4xl mx-auto px-6 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#141210]">
+          Sample Conversions
         </h1>
-
-        <p className="text-[#7a7367] max-w-2xl mx-auto mt-4">
-          Examples of how messy academic input is transformed into structured frameworks.
+        <p className="text-[#7a7367] mt-4 text-lg leading-relaxed">
+          Real examples of messy academic input transformed into structured writing frameworks.
         </p>
       </div>
 
-      {/* Sample 1 */}
-      <div className="border border-[#d8d2c4] bg-[var(--white)] p-6 mb-6">
-        <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
-          Input: Messy assignment brief
-        </div>
+      {/* Samples */}
+      <div className="max-w-5xl mx-auto px-6 space-y-10">
 
-        <p className="text-sm text-[#7a7367] mb-4">
-          “Write about leadership theories, include examples, and discuss modern applications…”
-        </p>
+        {samples.map((sample) => (
+          <div
+            key={sample.id}
+            className="bg-white border border-[#ddd9d0] p-8"
+          >
 
-        <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
-          Output: Structured framework
-        </div>
+            {/* Title */}
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold text-[#141210]">
+                {sample.title}
+              </h2>
+              <p className="text-[#7a7367] mt-2">
+                {sample.description}
+              </p>
+            </div>
 
-        <ul className="text-sm space-y-2">
-          <li>1. Introduction to Leadership Theories</li>
-          <li>2. Classical Leadership Models</li>
-          <li>3. Modern Leadership Approaches</li>
-          <li>4. Case Studies and Real Examples</li>
-          <li>5. Critical Analysis</li>
-          <li>6. Conclusion</li>
-        </ul>
-      </div>
+            {/* INPUT */}
+            <div className="mb-6">
+              <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
+                Input Materials
+              </div>
 
-      {/* Sample 2 */}
-      <div className="border border-[#d8d2c4] bg-[var(--white)] p-6 mb-6">
-        <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
-          Input: Voice notes + lecture slides
-        </div>
+              <div className="space-y-3 text-sm text-[#7a7367]">
 
-        <p className="text-sm text-[#7a7367] mb-4">
-          “Explains marketing strategy confusion from lectures + notes.”
-        </p>
+                {Object.entries(sample.files).map(([key, value]) => (
+                  <div key={key} className="flex flex-col gap-2">
 
-        <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
-          Output: Structured framework
-        </div>
+                    <div className="capitalize font-medium text-[#141210]">
+                      {key}
+                    </div>
 
-        <ul className="text-sm space-y-2">
-          <li>1. Marketing Strategy Fundamentals</li>
-          <li>2. Market Segmentation</li>
-          <li>3. Targeting & Positioning</li>
-          <li>4. Digital Marketing Channels</li>
-          <li>5. Strategy Evaluation</li>
-        </ul>
+                    {/* AUDIO */}
+                    {key === "voice" ? (
+                      <audio controls className="w-full">
+                        <source src={value} type="audio/mpeg" />
+                        Your browser does not support audio.
+                      </audio>
+                    ) : (
+                      <a
+                        href={value}
+                        target="_blank"
+                        className="text-green-600 underline"
+                      >
+                        Open {key}
+                      </a>
+                    )}
+
+                  </div>
+                ))}
+
+              </div>
+            </div>
+
+            {/* OUTPUT */}
+            <div className="border-t border-[#ddd9d0] pt-6">
+              <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
+                Output Structure
+              </div>
+
+              <p className="text-sm text-[#141210] leading-relaxed">
+                Structured academic framework generated from raw input materials.
+                The system extracts logic, removes ambiguity, and rebuilds a writing-ready structure.
+              </p>
+
+              {sample.files.output && (
+                <a
+                  href={sample.files.output}
+                  target="_blank"
+                  className="inline-block mt-4 text-green-600 underline"
+                >
+                  View Full Output →
+                </a>
+              )}
+            </div>
+
+          </div>
+        ))}
+
       </div>
 
       {/* CTA */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-16 px-6">
         <a
-          href={`https://wa.me/${config.whatsapp.number}?text=${encodeURIComponent(
-            config.whatsapp.message
-          )}`}
-          className="btn"
+          href="https://wa.me/2349036961611"
+          className="inline-flex bg-[#22c55e] text-white px-8 py-4 font-medium"
         >
           Send Your Material
         </a>
       </div>
 
-    </div>
+    </main>
   )
 }
