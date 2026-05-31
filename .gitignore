@@ -33,3 +33,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/samples/*/voice.mp3
+public/samples/*/voice_fixed.mp3
+public/samples/*/*.m4a

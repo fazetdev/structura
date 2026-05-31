@@ -5,7 +5,7 @@
     "description": "Critical essay on motivation theories (Maslow vs Herzberg)",
     "files": {
       "notes": "/samples/soc201/notes.jpg",
-      "voice": "/samples/soc201/voice_fixed.m4a",
+      "voice": "/samples/soc201/voice_loud.mp3",
       "output": "/samples/soc201/output.docx"
     }
   },
@@ -16,7 +16,7 @@
     "files": {
       "brief": "/samples/bus203/brief.docx",
       "notes": "/samples/bus203/notes.jpg",
-      "voice": "/samples/bus203/voice_fixed.m4a",
+      "voice": "/samples/bus203/voice_loud.mp3",
       "output": "/samples/bus203/output.docx"
     }
   },
@@ -26,7 +26,7 @@
     "description": "Business management structured academic output sample",
     "files": {
       "notes": "/samples/bm502/notes.jpg",
-      "voice": "/samples/bm502/voice_fixed.m4a",
+      "voice": "/samples/bm502/voice_loud.mp3",
       "output": "/samples/bm502/output.docx"
     }
   }
