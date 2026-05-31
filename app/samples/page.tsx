@@ -21,17 +21,17 @@ export default function SamplesPage() {
   return (
     <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-20">
 
-      {/* Header */}
+      {/* HEADER */}
       <div className="max-w-4xl mx-auto px-6 text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-[#141210]">
           Sample Conversions
         </h1>
         <p className="text-[#7a7367] mt-4 text-lg leading-relaxed">
-          Real examples of messy academic input transformed into structured writing frameworks.
+          Real examples of messy academic input transformed into structured frameworks.
         </p>
       </div>
 
-      {/* Samples */}
+      {/* SAMPLES */}
       <div className="max-w-5xl mx-auto px-6 space-y-10">
 
         {samples.map((sample) => (
@@ -40,7 +40,7 @@ export default function SamplesPage() {
             className="bg-white border border-[#ddd9d0] p-8"
           >
 
-            {/* Title */}
+            {/* TITLE */}
             <div className="mb-6">
               <h2 className="text-2xl font-semibold text-[#141210]">
                 {sample.title}
@@ -50,39 +50,64 @@ export default function SamplesPage() {
               </p>
             </div>
 
-            {/* INPUT */}
+            {/* INPUT SECTION */}
             <div className="mb-6">
-              <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
+              <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-4">
                 Input Materials
               </div>
 
-              <div className="space-y-3 text-sm text-[#7a7367]">
+              <div className="space-y-4">
 
-                {Object.entries(sample.files).map(([key, value]) => (
-                  <div key={key} className="flex flex-col gap-2">
+                {/* VOICE (collapsed by default) */}
+                {sample.files.voice && (
+                  <details className="border border-[#ddd9d0] p-4">
+                    <summary className="cursor-pointer font-medium text-[#141210]">
+                      Voice Note (click to play)
+                    </summary>
 
-                    <div className="capitalize font-medium text-[#141210]">
-                      {key}
-                    </div>
-
-                    {/* AUDIO */}
-                    {key === "voice" ? (
-                      <audio controls className="w-full">
-                        <source src={value} type="audio/mpeg" />
-                        Your browser does not support audio.
-                      </audio>
-                    ) : (
-                      <a
-                        href={value}
-                        target="_blank"
-                        className="text-green-600 underline"
+                    <div className="mt-3">
+                      <audio
+                        controls
+                        preload="none"
+                        className="w-full h-14 cursor-pointer"
                       >
-                        Open {key}
-                      </a>
-                    )}
+                        <source src={sample.files.voice} type="audio/mpeg" />
+                      </audio>
+                    </div>
+                  </details>
+                )}
 
-                  </div>
-                ))}
+                {/* NOTES (collapsed by default) */}
+                {sample.files.notes && (
+                  <details className="border border-[#ddd9d0] p-4">
+                    <summary className="cursor-pointer font-medium text-[#141210]">
+                      Notes / Screenshot
+                    </summary>
+
+                    <img
+                      src={sample.files.notes}
+                      alt="Notes"
+                      className="mt-3 w-full max-h-[420px] object-contain"
+                    />
+                  </details>
+                )}
+
+                {/* BRIEF */}
+                {sample.files.brief && (
+                  <details className="border border-[#ddd9d0] p-4">
+                    <summary className="cursor-pointer font-medium text-[#141210]">
+                      Assignment Brief
+                    </summary>
+
+                    <a
+                      href={sample.files.brief}
+                      target="_blank"
+                      className="text-green-600 underline block mt-3"
+                    >
+                      Open Document
+                    </a>
+                  </details>
+                )}
 
               </div>
             </div>
