@@ -109,7 +109,7 @@ export default function Home() {
           </h2>
 
           <p className="text-base text-[#7a7469] mb-5 leading-relaxed">
-            View the full step-by-step breakdown of how Structura turns your academic material into a structured framework.
+            View the full step-by-step breakdown of how Qlack converts academic material into structured writing frameworks.
           </p>
 
           <Link

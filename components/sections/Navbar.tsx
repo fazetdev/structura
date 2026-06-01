@@ -4,123 +4,100 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { config } from "@/lib/config"
 
+const mainNav = [
+  { label: "How it works", href: "/how-it-works" },
+  { label: "Samples", href: "/samples" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "FAQ", href: "/faq" },
+]
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => window.removeEventListener("scroll", handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
   return (
     <nav
-      className={`
-        sticky top-0 z-50 transition-all duration-200
-        ${scrolled
-          ? "bg-[rgba(245,242,235,0.96)] backdrop-blur-md border-b border-[var(--border)]"
-          : "bg-[var(--paper)]"
-        }
-      `}
+      className={`sticky top-0 z-50 border-b transition-colors duration-200
+      ${scrolled ? "bg-[#141210]/95 backdrop-blur border-white/10" : "bg-[#141210]"}`}
     >
-      <div className="container">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        <div className="h-14 flex items-center justify-between">
+        {/* BRAND */}
+        <Link
+          href="/"
+          className="text-2xl font-semibold tracking-tight"
+          style={{ fontFamily: "Instrument Serif" }}
+        >
+          <span className="text-white">Q</span>
+          <span className="text-white/80">la</span>
+          <span className="text-[#c2410c]">ck</span>
+        </Link>
 
-          {/* Logo */}
-          <Link
-            href="/"
-            className="text-[1.3rem] tracking-tight"
-            style={{ fontFamily: "Instrument Serif" }}
-          >
-            Struc<span className="text-[var(--accent)]">tura</span>
-          </Link>
-
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-
-            {config.nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-[15px] text-[var(--muted)] hover:text-[var(--ink)] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-
-            <a
-              href={`https://wa.me/${config.whatsapp.number}?text=${encodeURIComponent(config.whatsapp.message)}`}
-              className="inline-flex items-center bg-[#25d366] text-white px-5 py-2 text-sm"
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-7 text-sm text-white/70">
+          {mainNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="hover:text-white transition"
             >
-              WhatsApp
-            </a>
-
-          </div>
-
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden flex flex-col gap-1.5"
-            aria-label="Toggle Menu"
-          >
-            <span
-              className={`block w-5 h-[1.5px] bg-[var(--ink)] transition-all ${
-                open ? "rotate-45 translate-y-[7px]" : ""
-              }`}
-            />
-
-            <span
-              className={`block w-5 h-[1.5px] bg-[var(--ink)] transition-all ${
-                open ? "opacity-0" : ""
-              }`}
-            />
-
-            <span
-              className={`block w-5 h-[1.5px] bg-[var(--ink)] transition-all ${
-                open ? "-rotate-45 -translate-y-[7px]" : ""
-              }`}
-            />
-          </button>
-
+              {item.label}
+            </Link>
+          ))}
         </div>
 
+        {/* MOBILE OPEN */}
+        <button
+          onClick={() => setOpen(true)}
+          className="md:hidden text-white text-sm border border-white/20 px-3 py-1"
+        >
+          Menu
+        </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden border-t border-[var(--border)] bg-[var(--paper)]">
+        <div className="fixed inset-0 bg-[#141210] z-50 flex flex-col">
 
-          <div className="container py-5 flex flex-col gap-5">
+          {/* HEADER */}
+          <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
+            <div className="text-white/70">Menu</div>
 
-            {config.nav.map((item) => (
+            <button
+              onClick={() => setOpen(false)}
+              className="text-white text-2xl leading-none"
+            >
+              ×
+            </button>
+          </div>
+
+          {/* LINKS */}
+          <div className="flex flex-col px-6 py-10 gap-6 text-white/80 text-lg">
+            {mainNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-base text-[var(--ink)]"
+                className="hover:text-white transition"
               >
                 {item.label}
               </Link>
             ))}
+          </div>
 
-            <a
-              href={`https://wa.me/${config.whatsapp.number}?text=${encodeURIComponent(config.whatsapp.message)}`}
-              className="inline-flex justify-center bg-[#25d366] text-white px-5 py-3 text-base"
-            >
-              Start on WhatsApp
-            </a>
-
+          {/* FOOTER STRIP */}
+          <div className="mt-auto border-t border-white/10 px-6 py-6 text-sm text-white/40">
+            Qlack — Academic structure support
           </div>
 
         </div>
       )}
-
     </nav>
   )
 }

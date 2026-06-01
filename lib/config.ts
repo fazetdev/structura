@@ -1,5 +1,5 @@
 export const config = {
-  brand: "Structura",
+  brand: "Qlack",
   tagline: "Academic Structure Service",
   whatsapp: {
     number: "2349036961611",

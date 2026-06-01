@@ -33,17 +33,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${syne.variable} ${inter.variable}`}
-    >
-      <body className="antialiased flex flex-col min-h-screen">
+    <html lang="en" className={`${syne.variable} ${inter.variable}`}>
+      <body className="antialiased flex flex-col min-h-screen bg-[#f6f3ee]">
         <Navbar />
-
-        <main className="flex-1 pt-20">
-          {children}
-        </main>
-
+        <main className="flex-1 pt-20">{children}</main>
         <Footer />
       </body>
     </html>
