@@ -19,7 +19,7 @@ const tiers = [
     level: "Tier 2",
     name: "Small Combo",
     price: "$9",
-    tag: "Most common",
+    tag: "Most popular",
     desc: "A small mix of 2–3 academic materials structured into one framework.",
     examples: [
       "Brief + lecture slides",
@@ -59,19 +59,14 @@ const tiers = [
   },
 ]
 
-const payments = [
-  { name: "Binance Pay", desc: "Crypto transfer", icon: "₿" },
-  { name: "Payoneer", desc: "Card or bank transfer", icon: "P" },
-  { name: "Grey", desc: "USD account transfer", icon: "G" },
-]
-
 export default function PricingPage() {
   return (
     <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-24 text-[#141210]">
       <div className="max-w-3xl mx-auto px-6">
 
-        {/* HEADER */}
-        <div className="mb-12">
+        {/* 1. HEADER */}
+        <div className="mb-10">
+
           <div className="inline-flex items-center gap-2 border border-[#22c55e]/30 px-3 py-1.5 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
             <span className="text-sm font-semibold tracking-widest uppercase text-[#22c55e]">
@@ -79,114 +74,128 @@ export default function PricingPage() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-5">
-            Choose based on<br />
-            <span className="text-[#22c55e]">what you already have</span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.1] mb-4">
+            Choose your <span className="text-[#22c55e]">workflow size</span>
           </h1>
 
-          <p className="text-lg text-[#141210] max-w-xl leading-relaxed mb-4">
-            Select a tier based on your current academic materials. No complexity scoring needed.
+          <p className="text-lg text-[#141210] leading-relaxed mb-3">
+            Send your academic material and receive a structured writing framework built from it.
           </p>
 
-          <p className="text-base text-[#7a7469]">
-            Works for assignments, reports, presentations, and project-based tasks.
+          <p className="text-sm text-[#7a7469]">
+            No complexity scoring. No confusion. Just select what you already have.
           </p>
 
-          <div className="border-l-4 border-[#22c55e] pl-4 mt-4">
-            <p className="text-base text-[#7a7469]">
-              A preview is always provided before payment.
-            </p>
-          </div>
         </div>
 
-        {/* TIERS */}
-        <div className="flex flex-col gap-5 mb-12">
+        {/* 2. FUNNEL EXPLANATION (KEY CONVERSION BLOCK) */}
+        <div className="border border-[#22c55e]/20 bg-[#22c55e]/5 p-5 mb-10 text-sm text-[#141210] space-y-2">
+          <p><b>How it works:</b></p>
+          <p>1. Send material on WhatsApp</p>
+          <p>2. Receive structured preview</p>
+          <p>3. Approve if satisfied</p>
+          <p>4. Pay and receive final structured output</p>
+        </div>
+
+        {/* 3. TIERS */}
+        <div className="flex flex-col gap-6 mb-12">
+
           {tiers.map((tier) => (
             <div
               key={tier.level}
-              className="bg-white border border-[#ddd9d0] p-8 flex flex-col gap-6 hover:border-[#22c55e]/50 transition-colors"
+              className="bg-white border border-[#ddd9d0] p-8 flex flex-col gap-6 hover:border-[#22c55e]/50 transition"
             >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-semibold tracking-widest uppercase text-[#7a7469]">
-                    {tier.level}
-                  </span>
 
-                  {tier.tag && (
-                    <span className="text-sm font-semibold text-[#22c55e] border border-[#22c55e]/30 px-3 py-1">
-                      {tier.tag}
-                    </span>
-                  )}
-                </div>
+              {/* Tier header */}
+              <div className="flex items-center justify-between">
+                <span className="text-xs tracking-widest uppercase text-[#7a7469] font-semibold">
+                  {tier.level}
+                </span>
 
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="text-6xl font-black text-[#141210]">
-                    {tier.price}
+                {tier.tag && (
+                  <span className="text-xs font-semibold text-[#22c55e] border border-[#22c55e]/30 px-3 py-1">
+                    {tier.tag}
                   </span>
-                  <span className="text-xl font-bold text-[#22c55e]">
-                    {tier.name}
-                  </span>
-                </div>
-
-                <p className="text-lg text-[#141210]">
-                  {tier.desc}
-                </p>
+                )}
               </div>
 
-              <div className="border-t border-[#ddd9d0] pt-5">
-                <div className="text-sm font-semibold tracking-widest uppercase text-[#7a7469] mb-4">
-                  Examples
-                </div>
+              {/* Price */}
+              <div className="flex items-baseline gap-3">
+                <span className="text-6xl font-black">{tier.price}</span>
+                <span className="text-xl font-bold text-[#22c55e]">
+                  {tier.name}
+                </span>
+              </div>
 
-                <ul className="flex flex-col gap-3">
+              {/* Description */}
+              <p className="text-base text-[#141210]">
+                {tier.desc}
+              </p>
+
+              {/* Examples */}
+              <div className="border-t border-[#ddd9d0] pt-5">
+                <p className="text-xs tracking-widest uppercase text-[#7a7469] mb-3">
+                  Examples
+                </p>
+
+                <ul className="space-y-2 text-sm text-[#7a7469]">
                   {tier.examples.map((ex) => (
-                    <li key={ex} className="flex gap-3 text-base text-[#7a7469]">
-                      <span className="text-[#22c55e] font-bold">→</span>
+                    <li key={ex} className="flex gap-2">
+                      <span className="text-[#22c55e]">→</span>
                       {ex}
                     </li>
                   ))}
                 </ul>
               </div>
 
+              {/* CTA */}
               <WhatsAppButton
-                label={`Request preview — ${tier.price}`}
+                label={`Get preview — ${tier.price}`}
                 size="lg"
                 fullWidth
                 customMessage={tier.waMessage}
               />
+
             </div>
           ))}
         </div>
 
-        {/* PAYMENT */}
-        <div className="bg-white border border-[#ddd9d0] mb-10">
-          <div className="border-b border-[#ddd9d0] px-8 py-5">
-            <span className="text-sm font-semibold tracking-widest uppercase text-[#7a7469]">
-              Payment methods
-            </span>
+        {/* 4. TRUST + RISK REDUCTION */}
+        <div className="grid gap-4 mb-10 text-sm text-[#7a7469]">
+
+          <div className="border border-[#ddd9d0] bg-white p-5">
+            ✔ No upfront payment required
           </div>
 
-          <div className="flex flex-col divide-y divide-[#ddd9d0]">
-            {payments.map((p) => (
-              <div key={p.name} className="px-8 py-6 flex items-center gap-5">
-                <div className="w-10 h-10 flex items-center justify-center bg-[#f6f3ee] border border-[#ddd9d0] font-bold">
-                  {p.icon}
-                </div>
-                <div>
-                  <div className="font-bold">{p.name}</div>
-                  <div className="text-sm text-[#7a7469]">{p.desc}</div>
-                </div>
-              </div>
-            ))}
+          <div className="border border-[#ddd9d0] bg-white p-5">
+            ✔ Preview is always sent before payment
           </div>
 
-          <div className="border-t border-[#ddd9d0] bg-[#faf9f7] px-8 py-5 text-sm text-[#7a7469]">
-            Need help choosing? Message on WhatsApp.
+          <div className="border border-[#ddd9d0] bg-white p-5">
+            ✔ You only pay if you approve the structure
           </div>
+
         </div>
 
-        <p className="text-sm text-[#7a7469] text-center">
-          Not a ghostwriting service — you always produce the final work.
+        {/* 5. PAYMENT CLARITY (NO DETAILS EXPOSED) */}
+        <div className="border border-[#ddd9d0] bg-white p-6 mb-10">
+
+          <p className="font-semibold mb-2">Supported payment methods</p>
+
+          <p className="text-sm text-[#7a7469] mb-3">
+            Payment details are shared only after preview approval.
+          </p>
+
+          <div className="text-sm text-[#7a7469] space-y-1">
+            <p>• Binance Pay</p>
+            <p>• USD Bank Transfer (Grey)</p>
+          </div>
+
+        </div>
+
+        {/* 6. FINAL FOOT NOTE */}
+        <p className="text-center text-sm text-[#7a7469]">
+          Structured academic support only — you retain full authorship of your work
         </p>
 
       </div>
