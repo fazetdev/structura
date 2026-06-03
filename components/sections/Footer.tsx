@@ -23,29 +23,35 @@ export default function Footer() {
 
         </div>
 
-        {/* CTA */}
-        <div className="mb-8">
+        {/* CTA BLOCK */}
+        <div className="mb-10 flex flex-col sm:flex-row gap-4">
 
           <a
             href={`https://wa.me/${config.whatsapp.number}?text=${encodeURIComponent(
               config.whatsapp.message
             )}`}
             className="
-              inline-flex
-              items-center
-              justify-center
-              bg-[#22c55e]
-              hover:bg-[#16a34a]
-              text-white
-              px-6
-              py-3
-              text-sm
-              w-fit
+              inline-flex items-center justify-center
+              bg-[#22c55e] hover:bg-[#16a34a]
+              text-white px-6 py-3 text-sm
               transition-colors
             "
           >
             Start on WhatsApp
           </a>
+
+          <Link
+            href="/pricing"
+            className="
+              inline-flex items-center justify-center
+              border border-white/30 text-white
+              px-6 py-3 text-sm
+              hover:bg-white hover:text-black
+              transition-colors
+            "
+          >
+            View Pricing
+          </Link>
 
         </div>
 
@@ -54,6 +60,14 @@ export default function Footer() {
 
           <Link href="/faq" className="text-white/60 hover:text-white transition">
             FAQ
+          </Link>
+
+          <Link href="/how-it-works" className="text-white/60 hover:text-white transition">
+            How it works
+          </Link>
+
+          <Link href="/pricing" className="text-white/60 hover:text-white transition">
+            Pricing
           </Link>
 
           <Link href="/policy" className="text-white/60 hover:text-white transition">

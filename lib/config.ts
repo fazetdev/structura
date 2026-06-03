@@ -3,7 +3,15 @@ export const config = {
   tagline: "Academic Structure Service",
   whatsapp: {
     number: "2349036961611",
-    message: "Hi, I need help organizing my academic material. I'm sending:",
+    message: `Hi Qlack,
+
+I would like a preview for my academic material.
+
+My goal is:
+
+[Describe your assignment, report, presentation, or project]
+
+I am ready to send the material.`,
   },
   nav: [
     { label: "How it works", href: "/how-it-works" },
@@ -23,4 +31,6 @@ export const config = {
 }
 
 export const waLink = () =>
-  `https://wa.me/${config.whatsapp.number}?text=${encodeURIComponent(config.whatsapp.message)}`
+  `https://wa.me/${config.whatsapp.number}?text=${encodeURIComponent(
+    config.whatsapp.message
+  )}`

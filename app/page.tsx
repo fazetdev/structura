@@ -2,7 +2,6 @@
 
 import Hero from "@/components/sections/Hero"
 import Link from "next/link"
-import { useState } from "react"
 
 const items = [
   {
@@ -48,29 +47,24 @@ const items = [
 ]
 
 function AccordionItem({ item }: { item: typeof items[0] }) {
-  const [open, setOpen] = useState(false)
-
   return (
     <div className="border border-[#ddd9d0] bg-white">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center p-5 text-left"
-      >
-        <span className="text-lg font-medium text-[#141210]">
-          {item.title}
-        </span>
-        <span className="text-[#7a7469] text-2xl">
-          {open ? "−" : "+"}
-        </span>
-      </button>
+      <details className="group">
+        <summary className="cursor-pointer list-none flex justify-between items-center p-5">
+          <span className="text-lg font-medium text-[#141210]">
+            {item.title}
+          </span>
+          <span className="text-[#7a7469] text-2xl group-open:rotate-45 transition">
+            +
+          </span>
+        </summary>
 
-      {open && (
         <div className="px-5 pb-5">
           <p className="text-base text-[#7a7469] leading-relaxed">
             {item.desc}
           </p>
         </div>
-      )}
+      </details>
     </div>
   )
 }
@@ -83,7 +77,6 @@ export default function Home() {
 
       {/* INPUTS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
-
         <p className="text-sm text-[#7a7469] mb-4">
           Any form of academic material can be turned into a structured writing framework.
         </p>
@@ -97,9 +90,7 @@ export default function Home() {
 
       {/* PROCESS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
-
         <div className="border border-[#ddd9d0] bg-white p-6">
-
           <div className="text-sm uppercase tracking-widest text-[#7a7469] mb-2">
             Process
           </div>
@@ -118,14 +109,11 @@ export default function Home() {
           >
             Open How it works
           </Link>
-
         </div>
-
       </section>
 
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-6 py-14 border-t border-[#ddd9d0]">
-
         <div className="bg-white border border-[#ddd9d0] p-8 text-center">
 
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#141210] mb-5">
@@ -136,15 +124,35 @@ export default function Home() {
             One message is enough. Send your material exactly as it is.
           </p>
 
-          <a
-            href="https://wa.me/2349036961611?text=Hi%2C%20I%20need%20help%20organizing%20my%20academic%20material."
-            className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-4 text-base font-medium"
-          >
-            Start on WhatsApp
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <a
+              href={`https://wa.me/2349036961611?text=${encodeURIComponent(
+                `Hi Qlack,
+
+I would like a preview for my academic material.
+
+My goal is:
+
+[Describe your assignment, report, presentation, or project]
+
+I am ready to send the material.`
+              )}`}
+              className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-4 text-base font-medium"
+            >
+              Start on WhatsApp
+            </a>
+
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center border border-[#22c55e] text-[#22c55e] px-8 py-4 text-base font-medium hover:bg-[#22c55e] hover:text-white transition"
+            >
+              View Pricing
+            </Link>
+
+          </div>
 
         </div>
-
       </section>
 
     </main>
