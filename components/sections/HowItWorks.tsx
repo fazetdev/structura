@@ -5,11 +5,11 @@ export default function HowItWorks() {
 
         {/* Title */}
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-          How it works
+          Simple process
         </h2>
 
         <p className="mt-3 text-[#b5b5b5] max-w-2xl">
-          Simple process. No forms. No complexity. Just WhatsApp.
+          Send. Structure. Write.
         </p>
 
         {/* Steps */}
@@ -17,9 +17,9 @@ export default function HowItWorks() {
 
           <div className="border border-[#2a2a2a] rounded-xl p-6">
             <div className="text-sm text-[#b5b5b5] mb-2">Step 1</div>
-            <h3 className="font-medium">Send your material</h3>
+            <h3 className="font-medium">Send material</h3>
             <p className="text-sm text-[#b5b5b5] mt-2">
-              Voice notes, PDFs, screenshots, or messy instructions.
+              Notes, PDFs, screenshots, or voice notes.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export default function HowItWorks() {
             <div className="text-sm text-[#b5b5b5] mb-2">Step 2</div>
             <h3 className="font-medium">We structure it</h3>
             <p className="text-sm text-[#b5b5b5] mt-2">
-              We convert it into a clean academic framework.
+              Turn it into a clear academic structure.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ export default function HowItWorks() {
             <div className="text-sm text-[#b5b5b5] mb-2">Step 3</div>
             <h3 className="font-medium">You write faster</h3>
             <p className="text-sm text-[#b5b5b5] mt-2">
-              You complete your assignment with clarity and structure.
+              Finish your work with structure.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function HowItWorks() {
         {/* Micro CTA */}
         <div className="mt-10 text-center">
           <p className="text-[#b5b5b5] text-sm">
-            No account. No signup. Just WhatsApp.
+            No signup. Just WhatsApp.
           </p>
         </div>
 

@@ -6,8 +6,9 @@ export default function PricingPage() {
     <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-24 text-[#141210]">
       <div className="max-w-3xl mx-auto px-6">
 
-        {/* HEADER */}
+        {/* Header */}
         <div className="mb-10">
+
           <div className="inline-flex items-center gap-2 border border-[#22c55e]/30 px-3 py-1.5 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
             <span className="text-sm font-semibold tracking-widest uppercase text-[#22c55e]">
@@ -16,31 +17,31 @@ export default function PricingPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-            Choose your <span className="text-[#22c55e]">workflow level</span>
+            Choose your structure level
           </h1>
 
           <p className="text-lg text-[#7a7469]">
-            Send materials → receive structured preview → approve → complete output
+            Send your material. Receive a structured academic framework.
           </p>
         </div>
 
-        {/* DECISION HELPER */}
+        {/* Quick help */}
         <div className="bg-white border border-[#ddd9d0] p-6 mb-10">
           <h2 className="text-lg font-semibold mb-2">
-            Not sure what to choose?
+            Not sure?
           </h2>
 
           <p className="text-sm text-[#7a7469] mb-4">
-            Just send your material. We will tell you the correct structure level before you pay.
+            Send your material first. We will tell you the correct option.
           </p>
 
           <WhatsAppButton
-            label="Get recommendation on WhatsApp"
+            label="Ask on WhatsApp"
             size="md"
           />
         </div>
 
-        {/* TIERS */}
+        {/* Tiers */}
         <div className="flex flex-col gap-6 mb-10">
 
           {tiers.map((tier) => (
@@ -49,7 +50,6 @@ export default function PricingPage() {
               className="bg-white border border-[#ddd9d0] p-8 flex flex-col gap-5"
             >
 
-              {/* HEADER ROW */}
               <div className="flex justify-between items-center">
                 <span className="text-xs tracking-widest uppercase text-[#7a7469]">
                   {tier.name}
@@ -62,27 +62,23 @@ export default function PricingPage() {
                 )}
               </div>
 
-              {/* PRICE */}
-              <div className="text-5xl font-black text-[#141210]">
+              <div className="text-5xl font-black">
                 {tier.price}
               </div>
 
-              {/* DESCRIPTION */}
               <p className="text-[#7a7469]">
                 {tier.desc}
               </p>
 
-              {/* EXAMPLES */}
               <ul className="text-sm text-[#7a7469] space-y-2">
                 {tier.examples.map((e) => (
                   <li key={e}>→ {e}</li>
                 ))}
               </ul>
 
-              {/* CTA */}
               <WhatsAppButton
-                label={`Request preview — ${tier.price}`}
-                fullWidth
+                label="Request this structure"
+                size="lg"
                 customMessage={tier.waMessage}
               />
 
@@ -91,15 +87,15 @@ export default function PricingPage() {
 
         </div>
 
-        {/* GLOBAL CTA */}
-        <div className="bg-white border border-[#ddd9d0] p-8 text-center mb-10">
+        {/* Final CTA */}
+        <div className="bg-white border border-[#ddd9d0] p-8 text-center">
 
           <h2 className="text-2xl font-bold mb-3">
             Still unsure?
           </h2>
 
           <p className="text-[#7a7469] mb-5">
-            Send your material and we will recommend the right structure level before you choose.
+            Send your material. We will guide the structure level.
           </p>
 
           <WhatsAppButton
@@ -108,11 +104,6 @@ export default function PricingPage() {
           />
 
         </div>
-
-        {/* FOOTNOTE */}
-        <p className="text-center text-sm text-[#7a7469]">
-          Structured academic support only — you retain full authorship
-        </p>
 
       </div>
     </main>

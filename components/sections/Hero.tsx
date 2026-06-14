@@ -10,21 +10,20 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2.5 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-full px-4 py-2 mb-10">
           <span className="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse" />
           <span className="text-xs font-semibold tracking-widest uppercase text-[#22c55e]">
-            Qlack Academic Structure Support
+            Academic structure for students
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-8 max-w-4xl break-words">
-          Turn messy academic material into{" "}
-          <span className="text-[#22c55e]">structured clarity</span>
+          Can’t start your assignment?
+          {" "}
+          <span className="text-[#22c55e]">Get structured clarity</span>
         </h1>
 
         {/* Body */}
         <p className="text-lg md:text-xl text-[#cfcfcf] leading-[1.8] max-w-3xl mb-12 font-normal">
-          Send assignments, reports, presentations, lecture notes, PDFs,
-          screenshots, or voice notes. Qlack converts unstructured input into
-          a structured writing framework you can build from.
+          Send assignments, notes, PDFs, screenshots, or voice notes. We turn them into a clear structure you can write from.
         </p>
 
         {/* CTA */}
@@ -46,12 +45,13 @@ export default function Hero() {
 
         {/* Trust strip */}
         <div className="mt-16 pt-10 border-t border-[#1f1f1f] grid sm:grid-cols-2 gap-5">
+
           <div className="flex items-start gap-4">
             <div className="w-8 h-8 rounded-full bg-[#22c55e]/10 border border-[#22c55e]/30 flex items-center justify-center shrink-0 mt-0.5">
               <span className="text-[#22c55e] text-sm font-bold">✓</span>
             </div>
             <p className="text-[#bdbdbd] text-base leading-relaxed">
-              Structured academic guidance only — not ghostwriting or submission writing
+              Structured guidance only
             </p>
           </div>
 
@@ -60,9 +60,10 @@ export default function Hero() {
               <span className="text-[#22c55e] text-sm font-bold">✓</span>
             </div>
             <p className="text-[#bdbdbd] text-base leading-relaxed">
-              Works across assignments, reports, presentations, and project work
+              Works for assignments, reports, and projects
             </p>
           </div>
+
         </div>
 
       </div>

@@ -24,11 +24,11 @@ export default function SamplesPage() {
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-[#141210]">
-          Sample Conversions
+          Proof of structure
         </h1>
 
         <p className="text-[#7a7367] mt-4 text-lg leading-relaxed">
-          Real examples of messy academic input transformed into structured frameworks.
+          See how messy academic input becomes structure.
         </p>
       </div>
 
@@ -54,19 +54,17 @@ export default function SamplesPage() {
             {/* INPUT MATERIALS */}
             <div className="mb-6">
               <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
-                Input Materials
+                Input
               </div>
 
               <div className="space-y-4">
 
                 {Object.entries(sample.files).map(([key, value]) => (
                   <div key={key}>
-
-                    {/* VOICE BLOCK (IMPROVED) */}
                     {key === "voice" ? (
                       <div className="border border-[#ddd9d0] p-3 bg-[#faf8f4] rounded-md">
                         <div className="text-xs uppercase text-[#7a7367] mb-2">
-                          Voice Note
+                          Voice
                         </div>
 
                         <audio
@@ -81,12 +79,11 @@ export default function SamplesPage() {
                       <a
                         href={value}
                         target="_blank"
-                        className="text-green-600 underline text-sm"
+                        className="text-[#22c55e] underline text-sm"
                       >
                         Open {key}
                       </a>
                     )}
-
                   </div>
                 ))}
 
@@ -96,21 +93,20 @@ export default function SamplesPage() {
             {/* OUTPUT */}
             <div className="border-t border-[#ddd9d0] pt-6">
               <div className="text-xs uppercase tracking-widest text-[#7a7367] mb-3">
-                Output Structure
+                Output
               </div>
 
               <p className="text-sm text-[#141210] leading-relaxed">
-                Structured academic framework generated from raw input materials.
-                The system extracts logic, removes ambiguity, and rebuilds a writing-ready structure.
+                Structured academic output from raw input.
               </p>
 
               {sample.files.output && (
                 <a
                   href={sample.files.output}
                   target="_blank"
-                  className="inline-block mt-4 text-green-600 underline"
+                  className="inline-block mt-4 text-[#22c55e] underline"
                 >
-                  View Full Output →
+                  View output →
                 </a>
               )}
             </div>
@@ -126,7 +122,7 @@ export default function SamplesPage() {
           href="https://wa.me/2349036961611"
           className="inline-flex bg-[#22c55e] text-white px-8 py-4 font-medium"
         >
-          Send Your Material
+          Get your structure
         </a>
       </div>
 

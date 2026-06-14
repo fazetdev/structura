@@ -1,17 +1,16 @@
 export const config = {
   brand: "Qlack",
-  tagline: "Academic Structure Service",
+  tagline: "Turn academic material into structure",
   whatsapp: {
     number: "2349036961611",
     message: `Hi Qlack,
 
-I would like a preview for my academic material.
+I want structure for my academic work.
 
-My goal is:
+My material:
+[Send here]
 
-[Describe your assignment, report, presentation, or project]
-
-I am ready to send the material.`,
+I’m ready.`,
   },
   nav: [
     { label: "How it works", href: "/how-it-works" },

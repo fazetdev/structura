@@ -22,25 +22,18 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav
-      className={`sticky top-0 z-50 border-b transition-colors duration-200
-      ${scrolled ? "bg-[#141210]/95 backdrop-blur border-white/10" : "bg-[#141210]"}`}
-    >
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className={`sticky top-0 z-50 border-b transition
+      ${scrolled ? "bg-[#0b0b0f]/95 backdrop-blur border-white/10" : "bg-[#0b0b0f]"}`}>
 
-        {/* BRAND */}
-        <Link
-          href="/"
-          className="text-2xl font-semibold tracking-tight"
-          style={{ fontFamily: "Instrument Serif" }}
-        >
-          <span className="text-white">Q</span>
-          <span className="text-white/80">la</span>
-          <span className="text-[#c2410c]">ck</span>
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        {/* Brand */}
+        <Link href="/" className="text-xl font-semibold text-white">
+          Qlack
         </Link>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-7 text-sm text-white/70">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
           {mainNav.map((item) => (
             <Link
               key={item.href}
@@ -50,50 +43,56 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          <a
+            href={`https://wa.me/${config.whatsapp.number}`}
+            className="ml-4 bg-[#22c55e] text-black px-4 py-2 text-sm font-medium"
+          >
+            WhatsApp
+          </a>
         </div>
 
-        {/* MOBILE OPEN */}
+        {/* Mobile */}
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden text-white text-sm border border-white/20 px-3 py-1"
+          className="md:hidden text-white border border-white/20 px-3 py-1 text-sm"
         >
           Menu
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* Mobile menu */}
       {open && (
-        <div className="fixed inset-0 bg-[#141210] z-50 flex flex-col">
+        <div className="fixed inset-0 bg-[#0b0b0f] z-50 flex flex-col">
 
-          {/* HEADER */}
           <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
-            <div className="text-white/70">Menu</div>
-
+            <div className="text-white">Qlack</div>
             <button
               onClick={() => setOpen(false)}
-              className="text-white text-2xl leading-none"
+              className="text-white text-2xl"
             >
               ×
             </button>
           </div>
 
-          {/* LINKS */}
-          <div className="flex flex-col px-6 py-10 gap-6 text-white/80 text-lg">
+          <div className="flex flex-col px-6 py-10 gap-6 text-white text-lg">
             {mainNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="hover:text-white transition"
+                className="text-white/80 hover:text-white"
               >
                 {item.label}
               </Link>
             ))}
-          </div>
 
-          {/* FOOTER STRIP */}
-          <div className="mt-auto border-t border-white/10 px-6 py-6 text-sm text-white/40">
-            Qlack — Academic structure support
+            <a
+              href={`https://wa.me/${config.whatsapp.number}`}
+              className="mt-6 bg-[#22c55e] text-black px-4 py-3 text-center font-medium"
+            >
+              Start on WhatsApp
+            </a>
           </div>
 
         </div>
