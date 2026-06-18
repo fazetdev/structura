@@ -4,6 +4,7 @@ import "./globals.css"
 
 import Navbar from "@/components/sections/Navbar"
 import Footer from "@/components/sections/Footer"
+import { Analytics } from "@vercel/analytics/react"
 import { config } from "@/lib/config"
 
 const syne = Syne({
@@ -23,8 +24,7 @@ export const metadata: Metadata = {
     default: `${config.brand} — ${config.tagline}`,
     template: `%s — ${config.brand}`,
   },
-  description:
-    "Turn messy academic material into a clean structured starting draft.",
+  description: "Turn messy academic material into a clean structured starting draft.",
 }
 
 export default function RootLayout({
@@ -38,6 +38,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
