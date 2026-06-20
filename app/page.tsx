@@ -6,43 +6,35 @@ import Link from "next/link"
 const items = [
   {
     title: "Voice notes",
-    desc: "Lecture recordings or spoken explanations turned into structure.",
+    desc: "Lecture recordings or spoken explanations turned into structured writing framework.",
   },
   {
     title: "Assignment briefs",
-    desc: "Task sheets and rubrics turned into structure.",
+    desc: "Task sheets and rubrics converted into structured academic direction.",
   },
   {
     title: "Lecture notes",
-    desc: "Messy notes cleaned into structure.",
+    desc: "Messy notes organized into clear writing flow.",
   },
   {
     title: "PDF files",
-    desc: "Slides and textbooks converted into structure.",
+    desc: "Slides and textbooks converted into structured framework.",
   },
   {
     title: "Screenshots",
-    desc: "WhatsApp or LMS screenshots turned into structure.",
+    desc: "LMS or WhatsApp content turned into structured guidance.",
   },
   {
     title: "Handwritten notes",
-    desc: "Notebook or whiteboard content converted into structure.",
-  },
-  {
-    title: "Links",
-    desc: "Docs, articles, or lectures converted into structure.",
+    desc: "Notebook content converted into academic structure.",
   },
   {
     title: "Research material",
-    desc: "Academic sources organized into structure.",
-  },
-  {
-    title: "Presentation slides",
-    desc: "Slides turned into structure.",
+    desc: "Sources organized into writing direction.",
   },
   {
     title: "Project materials",
-    desc: "Multi-part projects broken into structure.",
+    desc: "Multi-part content broken into structured sections.",
   },
 ]
 
@@ -77,8 +69,13 @@ export default function Home() {
 
       {/* INPUTS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
-        <p className="text-sm text-[#7a7367] mb-4">
-          Turn academic material into structure.
+
+        <p className="text-sm text-[#7a7367] mb-2">
+          What you can send
+        </p>
+
+        <p className="text-lg font-medium text-[#141210] mb-6">
+          Any academic material in any format
         </p>
 
         <div className="space-y-3">
@@ -90,6 +87,7 @@ export default function Home() {
 
       {/* PROCESS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
+
         <div className="border border-[#ddd9d0] bg-white p-6">
 
           <div className="text-sm uppercase tracking-widest text-[#7a7367] mb-2">
@@ -101,7 +99,7 @@ export default function Home() {
           </h2>
 
           <p className="text-base text-[#7a7367] mb-5 leading-relaxed">
-            See how Qlack turns academic material into structure.
+            See how Qlack turns academic material into structured writing framework.
           </p>
 
           <Link
@@ -116,6 +114,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-6 py-14 border-t border-[#ddd9d0]">
+
         <div className="bg-white border border-[#ddd9d0] p-8 text-center">
 
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#141210] mb-5">
@@ -123,25 +122,16 @@ export default function Home() {
           </h2>
 
           <p className="text-lg text-[#7a7367] leading-relaxed mb-7 max-w-xl mx-auto">
-            Send your material as it is. Get structure.
+            Send your material. Get a structured writing framework in return.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
             <a
-              href={`https://wa.me/2349036961611?text=${encodeURIComponent(
-                `Hi Qlack,
-
-I want structure for my academic work.
-
-My material:
-[Send here]
-
-I’m ready.`
-              )}`}
+              href="/"
               className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-4 text-base font-medium"
             >
-              Start on WhatsApp
+              Get Structure on WhatsApp
             </a>
 
             <Link

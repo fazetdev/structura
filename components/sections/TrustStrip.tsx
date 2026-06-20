@@ -4,23 +4,23 @@ export default function TrustStrip() {
       <div className="grid md:grid-cols-3 gap-6 text-center">
 
         <div className="card">
-          <div className="text-lg font-semibold">Not Ghostwriting</div>
+          <div className="text-lg font-semibold">Not an essay writer</div>
           <p className="text-muted text-sm mt-2">
-            You write the final submission
+            Qlack does not write full assignments or submissions
           </p>
         </div>
 
         <div className="card">
-          <div className="text-lg font-semibold">Structured Output</div>
+          <div className="text-lg font-semibold">You stay in control</div>
           <p className="text-muted text-sm mt-2">
-            Clear academic framework
+            You receive structure, not final academic content
           </p>
         </div>
 
         <div className="card">
-          <div className="text-lg font-semibold">Fast Turnaround</div>
+          <div className="text-lg font-semibold">Built for clarity</div>
           <p className="text-muted text-sm mt-2">
-            Usually within hours
+            Designed to turn scattered material into a writing framework
           </p>
         </div>
 
