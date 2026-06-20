@@ -5,28 +5,41 @@ import { useState } from "react"
 const items = [
   {
     title: "Service purpose",
-    desc: "Qlack provides academic organization and structure support only. It helps transform unstructured input into a clear framework for the student's own writing.",
+    desc: "Qlack provides academic structure and organization support only. It converts unstructured academic materials into a clear writing framework for students to use in their own writing process.",
   },
   {
-    title: "No academic submission guarantee",
-    desc: "The service does not produce final academic submissions and does not guarantee grades, outcomes, or institutional approval.",
+    title: "No academic writing service",
+    desc: "Qlack does not write essays, assignments, reports, or any form of final academic submission. It does not generate completed coursework.",
+  },
+  {
+    title: "No grade guarantee",
+    desc: "Qlack does not guarantee academic grades, outcomes, or institutional approval. Results depend entirely on how the student applies the structure provided.",
   },
   {
     title: "User responsibility",
-    desc: "Users remain fully responsible for writing, editing, and submitting their own academic work based on the structure provided.",
+    desc: "Students are fully responsible for writing, editing, and submitting their own academic work based on the structure provided.",
+  },
+  {
+    title: "Acceptable use",
+    desc: "Qlack is intended strictly for educational structuring and planning. Any misuse outside academic integrity guidelines is not supported.",
   },
 ]
 
 function Item({ title, desc }: { title: string; desc: string }) {
   const [open, setOpen] = useState(false)
+
   return (
     <div className="border border-[#ddd9d0] bg-white">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center px-6 py-5 text-left"
       >
-        <span className="text-lg font-semibold text-[#141210]">{title}</span>
-        <span className="text-2xl text-[#7a7469]">{open ? "−" : "+"}</span>
+        <span className="text-lg font-semibold text-[#141210]">
+          {title}
+        </span>
+        <span className="text-2xl text-[#7a7469]">
+          {open ? "−" : "+"}
+        </span>
       </button>
 
       {open && (
@@ -58,13 +71,17 @@ export default function DisclaimerPage() {
           </h1>
 
           <p className="text-lg text-[#7a7469]">
-            What Qlack is — and what it is not.
+            What Qlack is, and what it is not.
           </p>
         </div>
 
         <div className="space-y-3">
           {items.map((item) => (
-            <Item key={item.title} title={item.title} desc={item.desc} />
+            <Item
+              key={item.title}
+              title={item.title}
+              desc={item.desc}
+            />
           ))}
         </div>
 

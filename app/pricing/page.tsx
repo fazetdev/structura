@@ -6,7 +6,7 @@ export default function PricingPage() {
     <main className="bg-[#f6f3ee] min-h-screen pt-24 pb-24 text-[#141210]">
       <div className="max-w-3xl mx-auto px-6">
 
-        {/* Header */}
+        {/* HEADER */}
         <div className="mb-10">
 
           <div className="inline-flex items-center gap-2 border border-[#22c55e]/30 px-3 py-1.5 mb-6">
@@ -20,28 +20,33 @@ export default function PricingPage() {
             Choose your structure level
           </h1>
 
-          <p className="text-lg text-[#7a7469]">
+          <p className="text-lg text-[#7a7469] mb-2">
             Send your material. Receive a structured academic framework.
+          </p>
+
+          <p className="text-sm text-[#7a7469]">
+            Pricing depends on complexity and depth of structure required.
           </p>
         </div>
 
-        {/* Quick help */}
+        {/* QUICK HELP */}
         <div className="bg-white border border-[#ddd9d0] p-6 mb-10">
+
           <h2 className="text-lg font-semibold mb-2">
-            Not sure?
+            Not sure which one to choose?
           </h2>
 
           <p className="text-sm text-[#7a7469] mb-4">
-            Send your material first. We will tell you the correct option.
+            Send your material. We will recommend the correct structure level before you pay.
           </p>
 
           <WhatsAppButton
-            label="Ask on WhatsApp"
+            label="Get recommendation on WhatsApp"
             size="md"
           />
         </div>
 
-        {/* Tiers */}
+        {/* TIERS */}
         <div className="flex flex-col gap-6 mb-10">
 
           {tiers.map((tier) => (
@@ -77,7 +82,7 @@ export default function PricingPage() {
               </ul>
 
               <WhatsAppButton
-                label="Request this structure"
+                label="Get this structure level"
                 size="lg"
                 customMessage={tier.waMessage}
               />
@@ -87,7 +92,7 @@ export default function PricingPage() {
 
         </div>
 
-        {/* Final CTA */}
+        {/* FINAL CTA */}
         <div className="bg-white border border-[#ddd9d0] p-8 text-center">
 
           <h2 className="text-2xl font-bold mb-3">
@@ -95,11 +100,11 @@ export default function PricingPage() {
           </h2>
 
           <p className="text-[#7a7469] mb-5">
-            Send your material. We will guide the structure level.
+            Send your material. We will recommend the correct structure level for you.
           </p>
 
           <WhatsAppButton
-            label="Start on WhatsApp"
+            label="Get structure recommendation"
             size="lg"
           />
 

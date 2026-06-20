@@ -4,21 +4,34 @@ import { useState } from "react"
 
 const items = [
   {
-    title: "Educational support only",
-    desc: "Qlack provides organization, structure, and clarity support for academic material. Nothing more.",
+    title: "Service purpose",
+    desc: "Qlack provides academic structure support only. It converts unstructured materials into a clear writing framework for students to use in their own work.",
   },
   {
     title: "No ghostwriting",
-    desc: "Qlack does not impersonate students or complete final academic submissions on their behalf.",
+    desc: "Qlack does not write full assignments, essays, or reports. It does not replace student work or submit content on behalf of users.",
   },
   {
-    title: "Responsible usage",
-    desc: "Students are expected to use the structure provided as guidance for their own writing process.",
+    title: "User responsibility",
+    desc: "Students are fully responsible for writing, editing, and submitting their own academic work based on the structure provided.",
+  },
+  {
+    title: "Delivery timeframe",
+    desc: "Preview evaluation is typically delivered within 4 hours. Full structured framework is delivered within 24 hours after confirmation.",
+  },
+  {
+    title: "Revisions",
+    desc: "One free revision is allowed within 48 hours if the structure does not match the agreed scope. Revisions only cover restructuring, not content expansion.",
+  },
+  {
+    title: "Refund policy",
+    desc: "Refunds are only issued if delivery fails within the stated timeframe. Because a preview is provided before full processing, refunds are otherwise not applicable.",
   },
 ]
 
 function Item({ title, desc }: { title: string; desc: string }) {
   const [open, setOpen] = useState(false)
+
   return (
     <div className="border border-[#ddd9d0] bg-white">
       <button
@@ -58,7 +71,7 @@ export default function PolicyPage() {
           </h1>
 
           <p className="text-lg text-[#7a7469]">
-            How Qlack operates and what it stands for.
+            How Qlack operates, delivers, and supports academic structuring services.
           </p>
         </div>
 
