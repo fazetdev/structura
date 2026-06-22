@@ -2,6 +2,7 @@
 
 import Hero from "@/components/sections/Hero"
 import Link from "next/link"
+import OutputPreview from "@/components/sections/OutputPreview"
 
 const items = [
   {
@@ -65,6 +66,7 @@ export default function Home() {
   return (
     <main className="bg-[#f6f3ee]">
 
+      {/* HERO */}
       <Hero />
 
       {/* INPUTS */}
@@ -84,6 +86,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* OUTPUT PROOF (MOVED HERE - KEY FIX) */}
+      <OutputPreview />
 
       {/* PROCESS */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
@@ -112,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FINAL CTA */}
       <section className="max-w-5xl mx-auto px-6 py-14 border-t border-[#ddd9d0]">
 
         <div className="bg-white border border-[#ddd9d0] p-8 text-center">
@@ -128,7 +133,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
             <a
-              href="/"
+              href="https://wa.me/2349036961611?text=Hi%20Qlack%2C%0A%0AI%20need%20structured%20help%20with%20my%20academic%20work."
               className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-4 text-base font-medium"
             >
               Get Structure on WhatsApp

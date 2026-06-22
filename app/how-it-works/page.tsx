@@ -13,12 +13,11 @@ export default function HowItWorksPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#141210] leading-tight mb-3">
-            Preview before you pay.<br />
-            <span className="text-[#22c55e]">Always.</span>
+            Simple process. Clear structure.
           </h1>
 
           <p className="text-base text-[#7a7469]">
-            Send your material → preview → approve → pay → full delivery.
+            Send your material → we structure it → you write with clarity.
           </p>
         </div>
 
@@ -32,23 +31,23 @@ export default function HowItWorksPage() {
             },
             {
               n: "02",
-              title: "Receive a preview",
-              desc: "A structured sample is prepared first so you can review quality before payment.",
+              title: "We analyze your assignment",
+              desc: "We extract the real question, requirements, and structure needed.",
             },
             {
               n: "03",
-              title: "Approve and pay",
-              desc: "If satisfied with the preview, proceed with secure payment options.",
+              title: "We build your structure",
+              desc: "Your material is converted into a clear academic writing framework.",
             },
             {
               n: "04",
-              title: "Full delivery",
-              desc: "Complete structured framework is delivered, ready for your final writing or submission.",
+              title: "You receive your framework",
+              desc: "A structured writing guide you can directly use to complete your assignment.",
             },
           ].map((s) => (
             <div
               key={s.n}
-              className="bg-[#faf9f7] border border-[#ddd9d0] px-6 py-5 hover:border-[#22c55e]/40 transition"
+              className="bg-white border border-[#ddd9d0] px-6 py-5 hover:border-[#22c55e]/40 transition"
             >
               <div className="text-2xl font-extrabold text-[#ddd9d0] mb-3">
                 {s.n}
@@ -68,9 +67,9 @@ export default function HowItWorksPage() {
         {/* Trust block */}
         <div className="mt-6 border-l-2 border-[#22c55e] pl-4">
           <p className="text-sm text-[#7a7469]">
-            You only pay after reviewing the preview.{" "}
+            You are not paying for an assignment.{" "}
             <span className="text-[#141210] font-medium">
-              No upfront risk. No forced payment.
+              You are paying for a structured writing framework that guides your work.
             </span>
           </p>
         </div>

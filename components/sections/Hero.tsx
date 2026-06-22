@@ -21,22 +21,14 @@ export default function Hero() {
           <span className="text-[#22c55e]">Get structured clarity</span>
         </h1>
 
-        {/* Body */}
-        <p className="text-lg md:text-xl text-[#cfcfcf] leading-[1.8] max-w-3xl mb-6 font-normal">
+        {/* Core value */}
+        <p className="text-lg md:text-xl text-[#cfcfcf] leading-[1.8] max-w-3xl mb-10">
           Send assignments, notes, PDFs, screenshots, or voice notes.
-          We convert them into a structured writing framework — not a finished essay.
-        </p>
-
-        {/* OUTPUT VISUALIZATION (KEY FIX) */}
-        <p className="text-sm text-[#9ca3af] max-w-3xl mb-10 leading-relaxed">
-          You receive a clear structure with sections, flow, and writing direction from your material.
-          <br />
-          Example output: Introduction → Key points → Section breakdown → What to write under each section
+          We convert them into a structured academic writing framework — not a finished essay.
         </p>
 
         {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-14">
           <WhatsAppButton
             label="Get Structure on WhatsApp"
             size="lg"
@@ -48,11 +40,10 @@ export default function Hero() {
           >
             View Pricing
           </Link>
-
         </div>
 
         {/* TRUST STRIP */}
-        <div className="mt-16 pt-10 border-t border-[#1f1f1f] grid sm:grid-cols-3 gap-5">
+        <div className="pt-10 border-t border-[#1f1f1f] grid sm:grid-cols-3 gap-5">
 
           <div className="flex items-start gap-4">
             <div className="w-8 h-8 rounded-full bg-[#22c55e]/10 border border-[#22c55e]/30 flex items-center justify-center shrink-0 mt-0.5">
