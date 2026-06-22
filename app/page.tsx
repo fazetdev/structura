@@ -6,36 +6,20 @@ import OutputPreview from "@/components/sections/OutputPreview"
 
 const items = [
   {
-    title: "Voice notes",
-    desc: "Lecture recordings or spoken explanations turned into structured writing framework.",
+    title: "Text & Notes",
+    desc: "Assignment briefs, lecture notes, handwritten content, and research material.",
   },
   {
-    title: "Assignment briefs",
-    desc: "Task sheets and rubrics converted into structured academic direction.",
+    title: "Files",
+    desc: "PDFs, slides, and documents converted into structured writing direction.",
   },
   {
-    title: "Lecture notes",
-    desc: "Messy notes organized into clear writing flow.",
+    title: "Media",
+    desc: "Voice notes, screenshots, and recordings turned into academic structure.",
   },
   {
-    title: "PDF files",
-    desc: "Slides and textbooks converted into structured framework.",
-  },
-  {
-    title: "Screenshots",
-    desc: "LMS or WhatsApp content turned into structured guidance.",
-  },
-  {
-    title: "Handwritten notes",
-    desc: "Notebook content converted into academic structure.",
-  },
-  {
-    title: "Research material",
-    desc: "Sources organized into writing direction.",
-  },
-  {
-    title: "Project materials",
-    desc: "Multi-part content broken into structured sections.",
+    title: "Projects",
+    desc: "Multi-part academic work broken into clear structured sections.",
   },
 ]
 
@@ -87,10 +71,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* OUTPUT PROOF (MOVED HERE - KEY FIX) */}
+      {/* OUTPUT PROOF */}
       <OutputPreview />
 
-      {/* PROCESS */}
+      {/* PROCESS (NO CTA INSIDE - CLEAN FLOW) */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-t border-[#ddd9d0]">
 
         <div className="border border-[#ddd9d0] bg-white p-6">
@@ -104,20 +88,20 @@ export default function Home() {
           </h2>
 
           <p className="text-base text-[#7a7367] mb-5 leading-relaxed">
-            See how Qlack turns academic material into structured writing framework.
+            Send your material → we extract structure → you write with clarity.
           </p>
 
           <Link
             href="/how-it-works"
-            className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-6 py-3 text-sm font-medium"
+            className="inline-flex items-center justify-center border border-[#22c55e] text-[#22c55e] px-6 py-3 text-sm font-medium hover:bg-[#22c55e] hover:text-white transition"
           >
-            Open How it works
+            View full process
           </Link>
 
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* FINAL CTA ONLY */}
       <section className="max-w-5xl mx-auto px-6 py-14 border-t border-[#ddd9d0]">
 
         <div className="bg-white border border-[#ddd9d0] p-8 text-center">
@@ -127,26 +111,15 @@ export default function Home() {
           </h2>
 
           <p className="text-lg text-[#7a7367] leading-relaxed mb-7 max-w-xl mx-auto">
-            Send your material. Get a structured writing framework in return.
+            Send your material and receive a structured academic framework in minutes.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-            <a
-              href="https://wa.me/2349036961611?text=Hi%20Qlack%2C%0A%0AI%20need%20structured%20help%20with%20my%20academic%20work."
-              className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-4 text-base font-medium"
-            >
-              Get Structure on WhatsApp
-            </a>
-
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center border border-[#22c55e] text-[#22c55e] px-8 py-4 text-base font-medium hover:bg-[#22c55e] hover:text-white transition"
-            >
-              View Pricing
-            </Link>
-
-          </div>
+          <a
+            href="https://wa.me/2349036961611?text=Hi%20Qlack%2C%0A%0AI%20need%20structured%20help%20with%20my%20academic%20work."
+            className="inline-flex items-center justify-center bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-4 text-base font-medium"
+          >
+            Get Structure on WhatsApp
+          </a>
 
         </div>
       </section>
